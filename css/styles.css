@@ -10,6 +10,8 @@
   --address-color: rgba(255, 255, 255, 0.6);
   --border-color: #ececec;
   --border-color-item: #eeeeee;
+  --bg-color-item: #f5f4fa;
+  --bg-color-hero: #c4c4c4;
   --font-family-logo: raleway, sans-serif;
   --primery-font-family: roboto, sans-serif;
 }
@@ -64,6 +66,11 @@ h6.p {
   list-style: none;
 }
 
+.link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -81,7 +88,9 @@ h6.p {
 /* header */
 
 .main-nav,
-.nav-list {
+.nav-list,
+.contact-list,
+.site-list {
   display: flex;
   align-items: center;
 }
@@ -97,7 +106,6 @@ h6.p {
   line-height: 1.192;
   text-align: left;
   color: var(--black-color);
-  text-decoration: none;
 }
 
 .nav-list .logo {
@@ -106,33 +114,6 @@ h6.p {
 
 .logo .web {
   color: var(--accent-color);
-}
-
-.site-list {
-  display: flex;
-}
-
-.site-list .item:not(:last-child) {
-  margin-right: 50px;
-}
-
-.contact-list .link,
-.site-list .link {
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
-
-  text-decoration: none;
-  color: var(--title-text-color);
-}
-
-.contact-list {
-  display: flex;
-  margin-left: auto;
-}
-
-.contact-list .item:not(:last-child) {
-  margin-right: 50px;
 }
 
 .site-list,
@@ -144,9 +125,52 @@ h6.p {
   text-align: left;
 }
 
+.site-list .item:not(:last-child),
+.contact-list .item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.contact-list .link,
+.site-list .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: var(--title-text-color);
+}
+
 .contact-list .link {
   color: var(--primery-text-color);
-  text-decoration: none;
+}
+
+.contact-list {
+  margin-left: auto;
+}
+
+.contact-list .e-mail-icon,
+.contact-list .smartphone-icon {
+  display: block;
+  margin-right: 10px;
+}
+
+.contact-list .mail,
+.contact-list .tel {
+  display: flex;
+  align-items: center;
+}
+
+.contact-list .e-mail-icon {
+  width: 16px;
+  height: 12px;
+}
+
+.contact-list .smartphone-icon {
+  width: 10px;
+  height: 16px;
+}
+
+.contact-list .link {
+  color: var(--primery-text-color);
 }
 
 .site-list .link:hover,
@@ -158,6 +182,15 @@ h6.p {
   color: var(--accent-color);
 }
 
+.contact-list .e-mail-icon:hover,
+.contact-list .e-mail-icon:focus,
+.contact-list .e-mail-icon:active,
+.contact-list .smartphone-icon:hover,
+.contact-list .smartphone-icon:focus,
+.contact-list .smartphone-icon:active {
+  fill: var(--accent-color);
+}
+
 .site-list .current {
   color: var(--accent-color);
 }
@@ -167,7 +200,12 @@ h6.p {
 /* hero*/
 
 .hero {
-  background-color: var(--bg-color);
+  max-width: 1600px;
+  background-color: var(--bg-color-hero);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/img-hover.jpg');
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 200px;
   padding-bottom: 200px;
 }
@@ -210,7 +248,8 @@ h6.p {
 }
 
 .hero .order-service:hover,
-.hero .order-service:focus .hero .order-service:active {
+.hero .order-service:focus,
+.hero .order-service:active {
   background-color: var(--accent-color-button);
 }
 
@@ -222,11 +261,7 @@ h6.p {
 
 .features .features-list {
   display: flex;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-left: 0px;
 
-  list-style: none;
   font-size: 14px;
   text-align: left;
   letter-spacing: 0.03em;
@@ -234,10 +269,6 @@ h6.p {
 
 .features-list .item {
   width: 270px;
-}
-
-.features-list .item:not(:last-child) {
-  margin-right: 30px;
 }
 
 .features .title {
@@ -251,6 +282,27 @@ h6.p {
   margin-bottom: 0px;
 
   line-height: 1.714;
+}
+
+.features-svg {
+  margin-bottom: 30px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  text-align: center;
+  width: 270px;
+  height: 120px;
+  border-radius: 4px;
+  background-color: var(--bg-color-item);
+}
+
+.features-svg .svg {
+  height: 70px;
+  max-width: 70px;
+}
+
+.features-list .item:not(:last-child) {
+  margin-right: 30px;
 }
 
 /* activities */
@@ -268,10 +320,6 @@ h6.p {
 
 .activities .activities-list {
   display: flex;
-  list-style: none;
-  padding-left: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 
 .activities-list .item + .item {
