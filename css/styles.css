@@ -12,6 +12,8 @@
   --border-color-item: #eeeeee;
   --bg-color-item: #f5f4fa;
   --bg-color-hero: #c4c4c4;
+  --bg-icon: #afb1b8;
+  --bg-white-transparency: rgba(255, 255, 255, 0.1);
   --font-family-logo: raleway, sans-serif;
   --primery-font-family: roboto, sans-serif;
 }
@@ -180,14 +182,6 @@ h6.p {
 .contact-list .link:focus,
 .contact-list .link:active {
   color: var(--accent-color);
-}
-
-.contact-list .e-mail-icon:hover,
-.contact-list .e-mail-icon:focus,
-.contact-list .e-mail-icon:active,
-.contact-list .smartphone-icon:hover,
-.contact-list .smartphone-icon:focus,
-.contact-list .smartphone-icon:active {
   fill: var(--accent-color);
 }
 
@@ -348,13 +342,14 @@ h6.p {
 
 .team .team-list {
   display: flex;
-  list-style: none;
-  padding-left: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
 
   width: 270px;
   font-size: 16px;
+}
+
+.team-list > .item {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .team-list .item:not(:last-child) {
@@ -386,12 +381,109 @@ h6.p {
 }
 
 .team-list .text {
-  margin-bottom: 0px;
+  margin-bottom: 16px;
   margin-top: 0px;
 
   font-weight: 400;
   line-height: 1.188;
   font-size: 16px;
+}
+
+.team-description .social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social .item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-item {
+  display: block;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  fill: var(--bg-icon);
+}
+
+.social-item .svg {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.social-item:hover,
+.social-item:focus,
+.social-item:active {
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+
+.social-item .svg:hover,
+.social-item .svg:focus,
+.social-item .svg:active {
+  fill: var(--white-color);
+}
+
+/* regular-customers*/
+
+.regular-customers {
+  text-align: center;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.regular-customers .title {
+  margin-bottom: 50px;
+
+  font-size: 36px;
+  line-height: 1.171;
+}
+
+.regular-customers .customers {
+  display: flex;
+  justify-content: center;
+}
+
+.regular-customers .link {
+  display: block;
+
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--bg-icon);
+  border-radius: 4px;
+}
+
+.regular-customers .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.regular-customers .svg {
+  width: 170px;
+  height: 92px;
+  padding-top: 16px;
+  padding-right: 32px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+
+  fill: var(--bg-icon);
+}
+
+.regular-customers .item:hover,
+.regular-customers .item:focus,
+.regular-customers .item:active {
+  border: 1px solid var(--accent-color);
+  cursor: pointer;
+}
+
+.regular-customers .svg:hover,
+.regular-customers .svg:focus,
+.regular-customers .svg:active {
+  fill: var(--accent-color);
 }
 
 /* footer*/
@@ -400,6 +492,15 @@ h6.p {
   background-color: var(--bg-color);
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.footer .container {
+  display: flex;
+}
+
+.footer .column-1 {
+  width: 231px;
+  margin-right: 70px;
 }
 
 .footer .logo {
@@ -449,6 +550,55 @@ h6.p {
 .footer-address-list .item-tel:focus,
 .footer-address-list .item-tel:active {
   color: var(--accent-color);
+}
+
+.footer .column-2 {
+  width: 206px;
+}
+
+.footer .title {
+  margin-bottom: 20px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.142;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--white-color);
+}
+
+.footer .social-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .social-link {
+  display: block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--bg-white-transparency);
+}
+
+.social-list .footer-svg {
+  width: 44px;
+  height: 44px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  fill: var(--white-color);
+}
+
+.social-list .item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer .social-link:hover,
+.footer .social-link:focus,
+.footer .social-link:active {
+  background-color: var(--accent-color);
 }
 
 /* PORTFOLIO*/
@@ -501,6 +651,8 @@ h6.p {
 .portfolio .filters-button:active {
   color: var(--white-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .filters .active {
@@ -529,7 +681,14 @@ h6.p {
 }
 
 .projects .link {
-  text-decoration: none;
+  display: block;
+}
+
+.projects .link:hover,
+.projects .link:focus,
+.projects .link:active {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .projects .img {
